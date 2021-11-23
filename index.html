@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<!--
+    Author:  Yasir Tahir
+    Class:   Web & Distributed Programming 
+    Project: Mustang v2 Lite
+    Session: su18-cpsc-24700-lt1
+    Description: This application is to allow a user to see all the contacts information and create, edit and delete more contact information.
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mustang v2 Lite</title>
+    <link rel="stylesheet" href="mustang-v2.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="//code.jquery/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="mustang-v2.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $("#searchID").autocomplete({
+                source: ['Eric', 'Bruce', 'Mick', 'Jacob', 'Peter', 'Pete', 'Jakub', 'Scott', 'Bojack', 'Paula', 'Edward', 'Lorelai', 'Vincent', 'Gon', 'Killua', 'Izzat', 'Tom', 'Eren', 'Kakarot', 'Luke', 'Nicholas', 'Clark', 'Ichigo'],
+                minLength: 2
+            });
+
+        });
+    </script>
+</head>
+
+<body onload="initApplication()">
+    <h1>Mustang v2.2 Lite</h1>
+    <div class="main">
+        <br>
+        <p id="searchField">Search Field</p>
+        <div class="container">
+            <input id="searchID" type="text" class="child">
+
+        </div>
+
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td>
+                    <input id="nameID" type="text" value="" size="20">
+                </td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td>
+                    <input id="emailID" type="text" value="" size="20">
+                </td>
+            </tr>
+            <tr>
+                <td>Phone Number:</td>
+                <td>
+                    <input id="phoneID" type="int" value="" size="20">
+                </td>
+            </tr>
+            <tr>
+                <td>Class:</td>
+                <td>
+                    <input id="classID" type="text" value="" size="20">
+                </td>
+            </tr>
+            <tr>
+                <td>City:</td>
+                <td>
+                    <input id="cityID" type="text" value="" size="20">
+                </td>
+            </tr>
+            <tr>
+                <td>State:</td>
+                <td>
+                    <input id="stateID" type="text" value="" size="20" onkeypress="keyPressed()">
+                </td>
+            </tr>
+            <tr>
+                <td>Zip</td>
+                <td>
+                    <input id="zipID" type="text" value="" size="20" onfocus="zipFocusFunction()" onblur="zipBlurFunction()">
+                </td>
+            </tr>
+            <tr>
+                <td><button type="button" onclick="previous()">Previous</button></td>
+                <td><button type="button" id="next" autofocus onclick="next()">Next</button>
+                </td>
+                <tr>
+                    <td><button type="button" onclick="add()">New</button></td>
+                    <td><button type="button" onclick="remove()">Delete</button>
+                    </td>
+                </tr>
+        </table>
+
+        <p id="statusID"></p>
+        <br><br>
+        <hr> Data and Test Functions:<br> Index:
+        <p id="indexID"></p>
+        Contacts:
+        <p id="contactsID"></p>
+</body>
+
+</html>
